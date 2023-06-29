@@ -28,25 +28,27 @@ fetch(gas_url)
       var td2 = document.createElement("td");
       var td3 = document.createElement("td");
       var td4 = document.createElement("td");
-      var td5 = document.createElement("td");
+      var a = document.createElement("a");
 
-      var text1 = document.createTextNode(sheetdata[i % 4]["科目"]);
-      var text2 = document.createTextNode(sheetdata[i % 4]["教師"]);
-      var text3 = document.createTextNode(sheetdata[i % 4]["年份"]);
-      var text4 = document.createTextNode(sheetdata[i % 4]["類別"]);
-      var text5 = document.createTextNode(sheetdata[i % 4]["檔案名稱"]);
+      var text1 = document.createTextNode(sheetdata[i]["科目"]);
+      var text2 = document.createTextNode(sheetdata[i]["教師"]);
+      var text3 = document.createTextNode(sheetdata[i]["年份"]);
+      var text4 = document.createTextNode(sheetdata[i]["類別"]);
+      a.href = sheetdata[i]["檔案"];
+      a.text = sheetdata[i]["檔案名稱"];
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
 
       td1.appendChild(text1);
       td2.appendChild(text2);
       td3.appendChild(text3);
       td4.appendChild(text4);
-      td5.appendChild(text5);
 
       tr.appendChild(td1);
       tr.appendChild(td2);
       tr.appendChild(td3);
       tr.appendChild(td4);
-      tr.appendChild(td5);
+      tr.appendChild(a);
 
       tbody.appendChild(tr);
     }
