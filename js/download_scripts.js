@@ -1,42 +1,71 @@
-var tablearea = document.getElementById("tablearea");
+console.log("data:", DATA["url"]);
+const url = DATA["url"];
+const gas_url = `${url}?download`;
+var sheetdata = {};
 
-var table = document.createElement("table");
-var thead = document.createElement("thead");
-var array = ["ID", "FirstName", "LastName", "Gender"];
+fetch(gas_url)
+  .then((res) => res.json())
+  .then((data) => {
+    sheetdata = data;
 
-for (var j = 0; j < array.length; j++) {
-  var th = document.createElement("th"); //column
-  var text = document.createTextNode(array[j]); //cell
-  th.appendChild(text);
-  thead.appendChild(th);
+    var tablearea = document.getElementById("tablearea");
+    var table = document.createElement("table");
+    var thead = document.createElement("thead");
+    var array = ["科目", "教師", "年份", "類別", "檔案名稱"];
+    for (var j = 0; j < array.length; j++) {
+      var th = document.createElement("th"); //column
+      var text = document.createTextNode(array[j]); //cell
+      th.appendChild(text);
+      thead.appendChild(th);
+    }
+    table.appendChild(thead);
+    var tbody = document.createElement("tbody");
+    console.log("sheetdata length:", sheetdata.length);
+    for (var i = 0; i < 10000; i++) {
+      var tr = document.createElement("tr");
+
+      var td1 = document.createElement("td");
+      var td2 = document.createElement("td");
+      var td3 = document.createElement("td");
+      var td4 = document.createElement("td");
+      var td5 = document.createElement("td");
+
+      var text1 = document.createTextNode(sheetdata[i % 4]["科目"]);
+      var text2 = document.createTextNode(sheetdata[i % 4]["教師"]);
+      var text3 = document.createTextNode(sheetdata[i % 4]["年份"]);
+      var text4 = document.createTextNode(sheetdata[i % 4]["類別"]);
+      var text5 = document.createTextNode(sheetdata[i % 4]["檔案名稱"]);
+
+      td1.appendChild(text1);
+      td2.appendChild(text2);
+      td3.appendChild(text3);
+      td4.appendChild(text4);
+      td5.appendChild(text5);
+
+      tr.appendChild(td1);
+      tr.appendChild(td2);
+      tr.appendChild(td3);
+      tr.appendChild(td4);
+      tr.appendChild(td5);
+
+      tbody.appendChild(tr);
+    }
+    table.appendChild(tbody);
+    tablearea.appendChild(table);
+  });
+
+/*
+async function getsheetdata(url) {
+  try {
+    let response = await fetch(url);
+    sheetdata = await response.json();
+    console.log("response:" + response);
+
+    console.log("sheedata:" + sheetdata);
+  } catch (error) {
+    console.log(`Error: ${error}`);
+  }
 }
-table.appendChild(thead);
-var tbody = document.createElement("tbody");
 
-for (var i = 0; i < 10000; i++) {
-  var tr = document.createElement("tr");
-
-  var td1 = document.createElement("td");
-  var td2 = document.createElement("td");
-  var td3 = document.createElement("td");
-  var td4 = document.createElement("td");
-
-  var text1 = document.createTextNode("Text1");
-  var text2 = document.createTextNode("Text2");
-  var text3 = document.createTextNode("Text3");
-  var text4 = document.createTextNode("Text4");
-
-  td1.appendChild(text1);
-  td2.appendChild(text2);
-  td3.appendChild(text3);
-  td4.appendChild(text4);
-
-  tr.appendChild(td1);
-  tr.appendChild(td2);
-  tr.appendChild(td3);
-  tr.appendChild(td4);
-
-  tbody.appendChild(tr);
-}
-table.appendChild(tbody);
-tablearea.appendChild(table);
+getsheetdata(gas_url);
+*/

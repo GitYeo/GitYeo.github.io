@@ -1,5 +1,5 @@
-const url =
-  "https://script.google.com/macros/s/AKfycbz7a7OSkYzEolOaVRT8zm4zZOv5B9pukdUfP4QeCiDry5FbIhG5D2ZC8gxVa8KjU9I/exec";
+console.log("data:", DATA["url"]);
+const url = DATA["url"];
 var input_id = document.getElementById("id_input");
 var input_password = document.getElementById("password_input");
 var login_button = document.getElementById("login_button");
