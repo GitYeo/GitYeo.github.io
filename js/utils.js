@@ -1,3 +1,3 @@
 var DATA = {
-  url: "https://script.google.com/macros/s/AKfycbwpEhdAAHB8aExy5VK1tM3HrkUxlxsQ9rBEVBwk0msutOLDOoXFo4ZS6EUzEnu9NjAS/exec",
+  url: "https://script.google.com/macros/s/AKfycbxmKwEF5qkKgX3NVRFnAR34by9OZ4meshHRlUXpa4cFcAZJGuOE1DjQ_UrQrB_ua5l8/exec",
 };

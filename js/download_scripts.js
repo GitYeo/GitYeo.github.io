@@ -21,7 +21,7 @@ fetch(gas_url)
     table.appendChild(thead);
     var tbody = document.createElement("tbody");
     console.log("sheetdata length:", sheetdata.length);
-    for (var i = 0; i < 10000; i++) {
+    for (var i = 0; i < sheetdata.length; i++) {
       var tr = document.createElement("tr");
 
       var td1 = document.createElement("td");
