@@ -68,9 +68,7 @@
               </ul>
             </li>
           </ul>
-          <button class="btn btn-outline-dark">
-            <?= username?>
-          </button>
+          <button id="userid" class="btn btn-outline-dark"></button>
         </div>
       </div>
     </nav>
@@ -266,7 +264,10 @@
     <!-- Bootstrap core JS-->
     <!-- Core theme JS-->
     <script src="js/utils.js"></script>
-
-    <script src="js/scripts.js"></script>
+    <script>
+      const userid = localStorage.getItem("userid");
+      var userid_tag = document.getElementById("userid");
+      userid_tag.innerHTML = userid;
+    </script>
   </body>
 </html>

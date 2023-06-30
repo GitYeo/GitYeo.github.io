@@ -76,16 +76,30 @@
       <div class="container px-4 px-lg-5 my-5">
         <div class="text-center text-white">
           <h1 class="display-4 fw-bolder">
-            <a href="mainpage.html">交馬資料庫</a>
+            <a id="qid_tag" href="mainpage.html"></a>
           </h1>
-          <p class="lead fw-normal text-white-50 mb-0">NYCU MALAYSIA</p>
+          <p class="lead fw-normal text-white-50 mb-0" id="question_tag"></p>
         </div>
       </div>
     </header>
     <!-- Section-->
     <section class="py-5">
+      <div id="answer_list"></div>
       <div class="container">
-        <div id="tablearea" class="container"></div>
+        <textarea
+          class="comment"
+          placeholder="Write your comment here..."
+          id="comment_textarea"
+        ></textarea>
+        <button
+          class="btn btn-outline-dark"
+          type="submit"
+          value="Comment"
+          name="CommentButton"
+          id="comment_button"
+        >
+          Submit
+        </button>
       </div>
     </section>
     <!-- Footer-->
@@ -99,6 +113,6 @@
     <!-- Bootstrap core JS-->
     <!-- Core theme JS-->
     <script src="js/utils.js"></script>
-    <script src="js/download_scripts.js"></script>
+    <script src="js/comment_scripts.js"></script>
   </body>
 </html>

@@ -1,3 +1,6 @@
+const userid = localStorage.getItem("userid");
+var userid_tag = document.getElementById("userid");
+userid_tag.innerHTML = userid;
 console.log("data:", DATA["url"]);
 const url = DATA["url"];
 const gas_url = `${url}?download`;

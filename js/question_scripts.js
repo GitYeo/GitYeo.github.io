@@ -1,3 +1,6 @@
+const userid = localStorage.getItem("userid");
+var userid_tag = document.getElementById("userid");
+userid_tag.innerHTML = userid;
 console.log("data:", DATA["url"]);
 console.log(window.location.href);
 const url = DATA["url"];
@@ -24,7 +27,7 @@ fetch(gas_url)
         var question = document.getElementById(e.target.innerHTML).innerHTML;
         console.log("myquestion:" + question);
         localStorage.setItem("question", question);
-        window.location.href = `answer.html?qid=${e.target.innerHTML}`;
+        window.location.href = `comment.html?qid=${e.target.innerHTML}`;
       });
       var p_tag = document.createElement("p");
       p_tag.innerHTML = data[i]["question"];
