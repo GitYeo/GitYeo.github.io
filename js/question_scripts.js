@@ -14,12 +14,21 @@ fetch(gas_url)
       var span_id = document.createElement("span");
       span_id.innerHTML = data[i]["qid"];
       span_id.className = "title";
+      span_id.id = "span_" + i;
       var span_time = document.createElement("span");
       span_time.innerHTML = data[i]["time"];
       span_time.className = "title";
 
+      span_id.addEventListener("click", (e) => {
+        console.log(e.target.innerHTML);
+        var question = document.getElementById(e.target.innerHTML).innerHTML;
+        console.log("myquestion:" + question);
+        localStorage.setItem("question", question);
+        window.location.href = `answer.html?qid=${e.target.innerHTML}`;
+      });
       var p_tag = document.createElement("p");
       p_tag.innerHTML = data[i]["question"];
+      p_tag.id = data[i]["qid"];
       p_tag.className = "m-0 text-centere";
       div.appendChild(span_id);
       div.appendChild(span_time);
