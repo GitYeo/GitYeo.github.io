@@ -5,7 +5,6 @@ console.log("data:", DATA["url"]);
 console.log(window.location.href);
 const url = DATA["url"];
 const gas_url = `${url}?question`;
-var sheetdata = {};
 
 fetch(gas_url)
   .then((res) => res.json())

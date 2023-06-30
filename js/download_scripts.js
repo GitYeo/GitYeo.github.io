@@ -1,16 +1,18 @@
 const userid = localStorage.getItem("userid");
 var userid_tag = document.getElementById("userid");
+
+userid_tag.addEventListener("click", (e) => {
+  console.log(saveData);
+});
+let saveData = [];
 userid_tag.innerHTML = userid;
 console.log("data:", DATA["url"]);
 const url = DATA["url"];
 const gas_url = `${url}?download`;
-var sheetdata = {};
 
 fetch(gas_url)
   .then((res) => res.json())
-  .then((data) => {
-    sheetdata = data;
-
+  .then((sheetdata) => {
     var tablearea = document.getElementById("tablearea");
     var table = document.createElement("table");
     var thead = document.createElement("thead");
@@ -26,7 +28,7 @@ fetch(gas_url)
     console.log("sheetdata length:", sheetdata.length);
     for (var i = 0; i < sheetdata.length; i++) {
       var tr = document.createElement("tr");
-
+      tr.className = "shown";
       var td1 = document.createElement("td");
       var td2 = document.createElement("td");
       var td3 = document.createElement("td");
@@ -54,23 +56,19 @@ fetch(gas_url)
       tr.appendChild(a);
 
       tbody.appendChild(tr);
+      saveData.push({ data: sheetdata[i], tag: tr });
     }
     table.appendChild(tbody);
     tablearea.appendChild(table);
   });
 
-/*
-async function getsheetdata(url) {
-  try {
-    let response = await fetch(url);
-    sheetdata = await response.json();
-    console.log("response:" + response);
+var searchbar = document.getElementById("searchbar");
+searchbar.addEventListener("input", (e) => {
+  const value = e.target.value;
 
-    console.log("sheedata:" + sheetdata);
-  } catch (error) {
-    console.log(`Error: ${error}`);
-  }
-}
-
-getsheetdata(gas_url);
-*/
+  //saveData
+  saveData.forEach((data) => {
+    const isVisible = data["data"]["科目"].includes(value);
+    data["tag"].classList.toggle("hide", !isVisible);
+  });
+});
