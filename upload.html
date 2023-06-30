@@ -85,7 +85,39 @@
     <!-- Section-->
     <section class="py-5">
       <div class="container">
-        <div id="tablearea" class="container"></div>
+        <form action="" method="POST" onsubmit="return false" id="upload_form">
+          <label>選擇檔案 Select File</label>
+          <br />
+          <input type="file" name="file" onchange="LoadFile(event)" required />
+          <input type="hidden" name="fileData" id="fileData" />
+          <input type="hidden" name="mimeType" id="mimeType" />
+          <input type="hidden" name="fileName" id="fileName" />
+
+          <br />
+          <label>科目</label>
+          <input type="text" name="subject" />
+          <br />
+          <label>教師</label>
+          <input type="text" name="prof" />
+          <br />
+          <label>年份</label>
+          <input type="text" name="year" />
+          <br />
+          <label>類別</label>
+          <input type="text" name="type" />
+          <br />
+          <button
+            class="btn btn-outline-dark"
+            type="submit"
+            value="Upload"
+            name="UploadButton"
+            id="upload_button"
+            onClick="uploadFile(this.form)"
+          >
+            Upload
+          </button>
+          <p1 id="upload_message"></p1>
+        </form>
       </div>
     </section>
     <!-- Footer-->
@@ -99,6 +131,6 @@
     <!-- Bootstrap core JS-->
     <!-- Core theme JS-->
     <script src="js/utils.js"></script>
-    <script src="js/download_scripts.js"></script>
+    <script src="js/upload_scripts.js"></script>
   </body>
 </html>

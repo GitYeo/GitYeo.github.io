@@ -35,6 +35,8 @@ fetch(gas_url)
       var p_tag = document.createElement("p");
       p_tag.innerHTML = data[i]["answer"];
       p_tag.className = "m-0 text-centere";
+      p_tag.style = "white-space: pre-line";
+
       div.appendChild(span_id);
       div.appendChild(span_time);
       div.appendChild(p_tag);
@@ -57,5 +59,28 @@ comment_button.addEventListener("click", (e) => {
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
+
+      var container = document.getElementById("answer_list");
+      var div = document.createElement("div");
+      div.className = "tip container";
+      var span_id = document.createElement("span");
+      span_id.innerHTML = userid;
+      span_id.className = "title";
+      span_id.id = "span_";
+      var span_time = document.createElement("span");
+      span_time.innerHTML = data["time"];
+      span_time.className = "title";
+
+      var p_tag = document.createElement("p");
+      p_tag.innerHTML = comment;
+      p_tag.className = "m-0 text-centere";
+      p_tag.style = "white-space: pre-line";
+      div.appendChild(span_id);
+      div.appendChild(span_time);
+      div.appendChild(p_tag);
+      container.appendChild(div);
+      for (var j = 0; j < 3; j++)
+        container.appendChild(document.createElement("br"));
+      document.getElementById("comment_textarea").value = "";
     });
 });
