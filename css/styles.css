@@ -11171,6 +11171,18 @@ span.title {
   position: relative;
 }
 
+span.title:hover {
+  background: #ffeff0;
+  padding: 0.6em 1.5em;
+  font-weight: 600;
+  font-size: 1.13em;
+  top: -17px;
+  left: -32px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
 .tip {
   background-color: #fffbce;
   border-width: 3px;
