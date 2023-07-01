@@ -4313,7 +4313,9 @@ fieldset:disabled .btn {
   background-color: var(--bs-card-bg);
   background-clip: border-box;
   border: var(--bs-card-border-width) solid var(--bs-card-border-color);
-  border-radius: var(--bs-card-border-radius);
+  border-radius: 5px;
+  border-width: 3px;
+  border-color: #000;
 }
 .card > hr {
   margin-right: 0;
@@ -11161,7 +11163,11 @@ fieldset:disabled .btn {
 }
 
 span.title {
-  background: #ffed00;
+  background: var(--bs-gray);
+  border-width: 3px;
+  color: white;
+  border-style: solid;
+  border-radius: 10px;
   padding: 0.6em 1.5em;
   font-weight: 600;
   font-size: 1.13em;
@@ -11172,7 +11178,11 @@ span.title {
 }
 
 span.title:hover {
-  background: #ffeff0;
+  background: white;
+  border-width: 3px;
+  color: black;
+  border-style: solid;
+  border-radius: 10px;
   padding: 0.6em 1.5em;
   font-weight: 600;
   font-size: 1.13em;
@@ -11184,9 +11194,10 @@ span.title:hover {
 }
 
 .tip {
-  background-color: #fffbce;
+  background-color: #fff;
   border-width: 3px;
   border-style: solid;
+  border-radius: 10px;
 }
 
 table {
@@ -11235,4 +11246,10 @@ tr.shown {
 
 tr.hide {
   display: none;
+}
+
+.card_button {
+  width: 70%; /* Full-width */
+  padding: 12px 20px 12px 40px; /* Add some padding */
+  border: 2px solid #000; /* Add a grey border */
 }

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <base target="_top" />
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -8,7 +9,7 @@
     />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>交馬資料src庫</title>
+    <title>交馬資料庫</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Bootstrap icons-->
@@ -70,31 +71,81 @@
     <header class="bg-dark py-5">
       <div class="container px-4 px-lg-5 my-5">
         <div class="text-center text-white">
-          <h1 class="display-4 fw-bolder">
-            <a id="qid_tag"></a>
-          </h1>
-          <p class="lead fw-normal text-white-50 mb-0" id="question_tag"></p>
+          <h1 class="display-4 fw-bolder">交馬資料庫</h1>
+          <p class="lead fw-normal text-white-50 mb-0">NYCU MALAYSIA</p>
         </div>
       </div>
     </header>
     <!-- Section-->
     <section class="py-5">
-      <div id="answer_list"></div>
-      <div class="container">
-        <textarea
-          class="comment"
-          placeholder="Write your comment here..."
-          id="comment_textarea"
-        ></textarea>
-        <button
-          class="btn btn-outline-dark"
-          type="submit"
-          value="Comment"
-          name="CommentButton"
-          id="comment_button"
+      <div class="container px-4 px-lg-5 mt-5">
+        <div
+          class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"
         >
-          Submit
-        </button>
+          <div class="col mb-5">
+            <div class="card h-100">
+              <!-- Product image-->
+              <img
+                class="card-img-top"
+                src="https://drive.google.com/uc?export=download&id=1shpwaaAsEjx-uVgKiT6vB8Xr1PLyhuHY"
+                alt="..."
+              />
+              <!-- Product details-->
+              <div class="card-body p-4">
+                <div class="text-center">
+                  <!-- Product name-->
+                  <a class="btn btn-outline-dark mt-auto" href="download.html"
+                    >考古專區</a
+                  >
+                  <!-- Product price-->
+                </div>
+              </div>
+              <!-- Product actions-->
+            </div>
+          </div>
+          <div class="col mb-5">
+            <div class="card h-100">
+              <!-- Product image-->
+              <img
+                class="card-img-top"
+                src="https://drive.google.com/uc?export=download&id=1shpwaaAsEjx-uVgKiT6vB8Xr1PLyhuHY"
+                alt="..."
+              />
+              <!-- Product details-->
+              <div class="card-body p-4">
+                <div class="text-center">
+                  <!-- Product name-->
+                  <a class="btn btn-outline-dark mt-auto" href="question.html"
+                    >專題QA專區</a
+                  >
+                  <!-- Product price-->
+                </div>
+              </div>
+              <!-- Product actions-->
+            </div>
+          </div>
+          <div class="col mb-5">
+            <div class="card h-100">
+              <!-- Product image-->
+              <img
+                class="card-img-top"
+                src="https://drive.google.com/uc?export=download&id=1shpwaaAsEjx-uVgKiT6vB8Xr1PLyhuHY"
+                alt="..."
+              />
+              <!-- Product details-->
+              <div class="card-body p-4">
+                <div class="text-center">
+                  <!-- Product name-->
+                  <a class="btn btn-outline-dark mt-auto" href="question.html"
+                    >實習QA專區</a
+                  >
+                  <!-- Product price-->
+                </div>
+              </div>
+              <!-- Product actions-->
+            </div>
+          </div>
+        </div>
       </div>
     </section>
     <!-- Footer-->
@@ -110,6 +161,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <script src="js/utils.js"></script>
-    <script src="js/comment_scripts.js"></script>
+    <script>
+      const userid = localStorage.getItem("userid");
+      var userid_tag = document.getElementById("userid");
+      userid_tag.innerHTML = userid;
+    </script>
   </body>
 </html>
