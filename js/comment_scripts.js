@@ -49,7 +49,9 @@ fetch(gas_url)
 var comment_button = document.getElementById("comment_button");
 
 comment_button.addEventListener("click", (e) => {
-  var comment = document.getElementById("comment_textarea").value;
+  //var comment = document.getElementById("comment_textarea").value;
+  var comment = tinymce.get("comment_textarea").getContent();
+  console.log("Comment:" + comment);
   const formData = new FormData();
   formData.append("comment", comment);
   formData.append("qid", qid);
@@ -81,6 +83,6 @@ comment_button.addEventListener("click", (e) => {
       container.appendChild(div);
       for (var j = 0; j < 3; j++)
         container.appendChild(document.createElement("br"));
-      document.getElementById("comment_textarea").value = "";
+      tinymce.get("comment_textarea").setContent("");
     });
 });
